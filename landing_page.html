@@ -1,0 +1,1235 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive Website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IEI Campus Hack 2026</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GLOBAL STYLING
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+        }
+
+        .logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #f5c518;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f5c518;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 100px 20px 50px;
+
+            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(245, 197, 24, 0.08),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    135deg,
+                    #050505,
+                    #111111,
+                    #050505
+                );
+        }
+
+
+        /* Decorative Background Grid */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            opacity: 0.4;
+        }
+
+
+        .hero-content {
+
+            position: relative;
+            z-index: 2;
+
+            max-width: 900px;
+        }
+
+
+        .small-heading {
+
+            color: #f5c518;
+
+            font-family: "Orbitron", sans-serif;
+
+            letter-spacing: 4px;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: clamp(42px, 8vw, 100px);
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+            color: #f5c518;
+        }
+
+
+        .hero p {
+
+            color: #bbbbbb;
+
+            max-width: 650px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* Date */
+
+        .event-date {
+
+            margin: 35px 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .date-box {
+
+            border: 1px solid #f5c518;
+
+            padding: 12px 20px;
+
+            font-family: "Orbitron", sans-serif;
+
+            color: #f5c518;
+
+            font-size: 14px;
+        }
+
+
+        /* Buttons */
+
+        .hero-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            padding: 14px 28px;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-primary {
+
+            background: #f5c518;
+
+            color: black;
+        }
+
+
+        .btn-primary:hover {
+
+            background: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        .btn-secondary {
+
+            border: 1px solid #f5c518;
+
+            color: #f5c518;
+
+            background: transparent;
+        }
+
+
+        .btn-secondary:hover {
+
+            background: #f5c518;
+
+            color: black;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SECTION COMMON
+        ========================= */
+
+        section {
+
+            padding: 100px 10%;
+
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-title span {
+
+            color: #f5c518;
+
+        }
+
+
+        .section-subtitle {
+
+            text-align: center;
+
+            color: #999;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            margin-bottom: 60px;
+
+        }
+
+
+        /* =========================
+           EVENTS SECTION
+        ========================= */
+
+        .events {
+
+            background: #0b0b0b;
+
+        }
+
+
+        .event-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+
+        }
+
+
+        .event-card {
+
+            background: #121212;
+
+            border: 1px solid #222;
+
+            padding: 30px;
+
+            position: relative;
+
+            transition: 0.4s;
+
+            overflow: hidden;
+
+        }
+
+
+        .event-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 5px;
+
+            height: 100%;
+
+            background: #f5c518;
+
+        }
+
+
+        .event-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #f5c518;
+
+            box-shadow:
+                0 15px 40px
+                rgba(245, 197, 24, 0.12);
+
+        }
+
+
+        .event-icon {
+
+            font-size: 40px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .event-card h3 {
+
+            font-family: "Orbitron", sans-serif;
+
+            margin-bottom: 15px;
+
+            font-size: 18px;
+
+        }
+
+
+        .event-card p {
+
+            color: #999;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .event-card a {
+
+            color: #f5c518;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           SCHEDULE
+        ========================= */
+
+        .schedule {
+
+            background: #050505;
+
+        }
+
+
+        .timeline {
+
+            max-width: 900px;
+
+            margin: auto;
+
+        }
+
+
+        .timeline-item {
+
+            display: grid;
+
+            grid-template-columns: 150px 1fr;
+
+            gap: 30px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .day {
+
+            font-family: "Orbitron", sans-serif;
+
+            color: #f5c518;
+
+            font-size: 20px;
+
+        }
+
+
+        .timeline-content {
+
+            background: #111;
+
+            padding: 25px;
+
+            border-left: 3px solid #f5c518;
+
+        }
+
+
+        .timeline-content h3 {
+
+            margin-bottom: 10px;
+
+            font-family: "Orbitron", sans-serif;
+
+        }
+
+
+        .timeline-content p {
+
+            color: #aaa;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================
+           REGISTER SECTION
+        ========================= */
+
+        .register {
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(245, 197, 24, 0.12),
+                    transparent 60%
+                ),
+
+                #090909;
+
+        }
+
+
+        .register-box {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 50px 30px;
+
+            border: 1px solid #f5c518;
+
+            background: rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        .register-box h2 {
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .register-box p {
+
+            color: #aaa;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            background: #000;
+
+            border-top:
+                1px solid rgba(245, 197, 24, 0.2);
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+        footer span {
+
+            color: #f5c518;
+
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media(max-width: 768px) {
+
+            nav {
+
+                padding: 15px 5%;
+
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+
+            .hero {
+
+                min-height: 100vh;
+
+            }
+
+
+            .timeline-item {
+
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+
+            }
+
+
+            section {
+
+                padding: 70px 6%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            IEI CAMPUS HACK
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#events">Events</a>
+            </li>
+
+            <li>
+                <a href="#schedule">Schedule</a>
+            </li>
+
+            <li>
+                <a href="#register">Register</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="small-heading">
+                IEI STUDENT CHAPTER PRESENTS
+            </div>
+
+
+            <h1>
+
+                IEI
+
+                <span>
+                    CAMPUS HACK
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Think. Create. Compete.
+
+                Join three days of technology,
+                creativity, innovation and competition.
+
+            </p>
+
+
+            <div class="event-date">
+
+                <div class="date-box">
+                    DAY 01
+                </div>
+
+                <div class="date-box">
+                    DAY 02
+                </div>
+
+                <div class="date-box">
+                    DAY 03
+                </div>
+
+            </div>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#register"
+                    class="btn btn-primary"
+                >
+
+                    REGISTER NOW
+
+                </a>
+
+
+                <a
+                    href="#events"
+                    class="btn btn-secondary"
+                >
+
+                    EXPLORE EVENTS
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EVENTS
+    ========================== -->
+
+    <section
+        class="events"
+        id="events"
+    >
+
+        <h2 class="section-title">
+
+            THE
+            <span>EVENTS</span>
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Five exciting competitions.
+            Three action-packed days.
+            One campus experience.
+
+        </p>
+
+
+        <div class="event-grid">
+
+
+            <!-- QUIZ -->
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    QUIZ
+                </h3>
+
+                <p>
+
+                    Test your technical knowledge
+                    and compete with the brightest
+                    minds on campus.
+
+                </p>
+
+                <a href="#register">
+                    REGISTER →
+                </a>
+
+            </div>
+
+
+
+            <!-- DEBATE -->
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🎤
+                </div>
+
+                <h3>
+                    DEBATE
+                </h3>
+
+                <p>
+
+                    Express your ideas,
+                    challenge perspectives
+                    and make your voice heard.
+
+                </p>
+
+                <a href="#register">
+                    REGISTER →
+                </a>
+
+            </div>
+
+
+
+            <!-- VIDEO EDITING -->
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🎬
+                </div>
+
+                <h3>
+                    VIDEO EDITING
+                </h3>
+
+                <p>
+
+                    Transform creativity
+                    into powerful visual stories.
+
+                </p>
+
+                <a href="#register">
+                    REGISTER →
+                </a>
+
+            </div>
+
+
+
+            <!-- TREASURE HUNT -->
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🕵️
+                </div>
+
+                <h3>
+                    TREASURE HUNT
+                </h3>
+
+                <p>
+
+                    Solve clues,
+                    explore challenges
+                    and find the hidden prize.
+
+                </p>
+
+                <a href="#register">
+                    REGISTER →
+                </a>
+
+            </div>
+
+
+
+            <!-- HACKATHON -->
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    💻
+                </div>
+
+                <h3>
+                    HACKATHON
+                </h3>
+
+                <p>
+
+                    Build innovative solutions,
+                    collaborate with your team
+                    and turn ideas into reality.
+
+                </p>
+
+                <a href="#register">
+                    REGISTER →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SCHEDULE
+    ========================== -->
+
+    <section
+        class="schedule"
+        id="schedule"
+    >
+
+        <h2 class="section-title">
+
+            EVENT
+            <span>SCHEDULE</span>
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Three days of learning,
+            creativity and innovation.
+
+        </p>
+
+
+        <div class="timeline">
+
+
+            <!-- DAY 1 -->
+
+            <div class="timeline-item">
+
+                <div class="day">
+
+                    DAY 01
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Quiz Competition
+                    </h3>
+
+                    <p>
+                        Debate Competition
+                        <br><br>
+
+                        Venue: Conference Hall
+                        <br>
+
+                        10:00 AM – 5:00 PM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DAY 2 -->
+
+            <div class="timeline-item">
+
+                <div class="day">
+
+                    DAY 02
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Video Editing Competition
+                    </h3>
+
+                    <p>
+
+                        Online Treasure Hunt
+
+                        <br><br>
+
+                        Venue: Computer Lab
+
+                        <br>
+
+                        10:00 AM – 5:00 PM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DAY 3 -->
+
+            <div class="timeline-item">
+
+                <div class="day">
+
+                    DAY 03
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        GRAND HACKATHON
+                    </h3>
+
+                    <p>
+
+                        Build. Innovate. Collaborate.
+
+                        <br><br>
+
+                        Venue: Computer Lab
+
+                        <br>
+
+                        10:00 AM – 5:00 PM
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         REGISTER
+    ========================== -->
+
+    <section
+        class="register"
+        id="register"
+    >
+
+        <div class="register-box">
+
+            <h2>
+
+                JOIN THE
+                <span style="color:#f5c518;">
+                    MISSION
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Ready to test your skills?
+
+                Register now and become part
+                of IEI Campus Hack.
+
+            </p>
+
+
+            <!--
+                Replace # with your
+                Google Form Link
+            -->
+
+            <a
+                href="#"
+                class="btn btn-primary"
+            >
+
+                REGISTER NOW
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026
+
+            <span>
+                IEI CAMPUS HACK
+            </span>
+
+            | IEI Student Chapter
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /*
+        Simple animation when page loads
+        */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                const hero =
+                    document.querySelector(
+                        ".hero-content"
+                    );
+
+                hero.style.opacity = "0";
+
+                hero.style.transform =
+                    "translateY(30px)";
+
+                hero.style.transition =
+                    "1s ease";
+
+
+                setTimeout(
+                    function () {
+
+                        hero.style.opacity = "1";
+
+                        hero.style.transform =
+                            "translateY(0)";
+
+                    },
+                    200
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
+```
