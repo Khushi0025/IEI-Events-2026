@@ -34,7 +34,7 @@ while ($listener.IsListening) {
 
         $path = $request.Url.LocalPath.TrimStart('/')
         if ([string]::IsNullOrWhiteSpace($path) -or $path -eq "/") {
-            $path = "landing_page.html"
+            $path = "index.html"
         }
 
         $filePath = Join-Path $currentDir $path

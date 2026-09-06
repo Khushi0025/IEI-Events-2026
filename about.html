@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
         /* ============================================================
@@ -217,6 +218,7 @@
         .about-hero h1 span {
             background: linear-gradient(135deg, #ffffff 40%, var(--gold) 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -851,20 +853,23 @@
          NAVBAR
     ========================== -->
     <nav>
-        <div class="nav-brand">
+        <a href="index.html" class="nav-brand">
             <span class="logo-badge">IEI</span>
             <div class="logo-text">CAMPUS <span>HACK 2026</span></div>
-        </div>
+        </a>
 
         <ul class="nav-links">
-            <li><a href="landing_page.html#home">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About</a></li>
-            <li><a href="landing_page.html#events">Events</a></li>
-            <li><a href="landing_page.html#schedule">Schedule</a></li>
-            <li><a href="landing_page.html#register">Register</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="register.html">Register</a></li>
         </ul>
 
-        <a href="landing_page.html#register" class="nav-cta">REGISTER NOW</a>
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <a href="register.html" class="nav-cta">REGISTER NOW</a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+        </div>
     </nav>
 
 
@@ -1246,8 +1251,8 @@
                 Whether you want to showcase your debate prowess, visual editing skills, or code the next big breakthrough, IEI Campus Hack 2026 is your platform.
             </p>
             <div class="hero-actions">
-                <a href="landing_page.html#register" class="btn-main btn-gold">Register Now</a>
-                <a href="landing_page.html#events" class="btn-main btn-outline">Explore All 5 Events</a>
+                <a href="register.html" class="btn-main btn-gold">Register Now</a>
+                <a href="events.html" class="btn-main btn-outline">Explore All 5 Events</a>
             </div>
         </div>
     </section>
@@ -1257,9 +1262,25 @@
          FOOTER
     ========================== -->
     <footer>
-        <p>© 2026 <span>IEI CAMPUS HACK</span> | Institution's Innovation Council (IEI) Student Chapter</p>
+        <div class="footer-content">
+            <a href="index.html" class="nav-brand">
+                <span class="logo-badge">IEI</span>
+                <div class="logo-text">CAMPUS <span>HACK 2026</span></div>
+            </a>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            © 2026 <span>IEI CAMPUS HACK</span> | Institution's Innovation Council Student Chapter. All rights reserved.
+        </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
