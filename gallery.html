@@ -29,7 +29,7 @@
 
         <div style="display: flex; align-items: center; gap: 14px;">
             <a href="register.html" class="nav-cta">REGISTER NOW</a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
         </div>
     </nav>
 
@@ -227,43 +227,11 @@
                     </p>
                 </div>
 
-                <div class="gallery-video-grid">
-
-                    <!-- Video 1: drop your first video file into iei/ and update src -->
-                    <div class="gallery-video-card">
-                        <video
-                            src="iei/video1.mp4"
-                            controls
-                            preload="metadata"
-                            aria-label="Techdrill event highlight video 1">
-                            Your browser does not support the video element.
-                        </video>
-                        <div class="gallery-video-label">
-                            🎥 Techdrill &mdash; Highlight Clip 1
-                        </div>
-                    </div>
-
-                    <!-- Video 2: drop your second video file into iei/ and update src -->
-                    <div class="gallery-video-card">
-                        <video
-                            src="iei/video2.mp4"
-                            controls
-                            preload="metadata"
-                            aria-label="Techdrill event highlight video 2">
-                            Your browser does not support the video element.
-                        </video>
-                        <div class="gallery-video-label">
-                            🎥 Techdrill &mdash; Highlight Clip 2
-                        </div>
-                    </div>
-
+                <div class="video-placeholder-card">
+                    <div class="video-placeholder-icon">🎥</div>
+                    <h3>Highlight clips coming soon</h3>
+                    <p>Video coverage from Techdrill is being edited and will be added here shortly. Check back after the event, or watch this page during IEI Campus Hack for live highlights.</p>
                 </div>
-
-                <p style="text-align:center; color:var(--text-muted); font-size:12.5px; margin-top:24px;">
-                    Videos render automatically once the files are placed in the
-                    <code style="color:var(--gold); background:rgba(245,197,24,0.08); padding:2px 6px; border-radius:4px;">iei/</code>
-                    folder and the filenames match the src paths above.
-                </p>
             </div>
         </section>
 
