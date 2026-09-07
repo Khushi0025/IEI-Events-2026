@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'aptitude',
             title: 'Aptitude Quiz Competition',
             shortTitle: 'Aptitude',
-            badge: 'Day 1 • 9th',
+            badge: 'Day 1 • 17th',
             icon: '🧠',
             formId: 'RBXZEAYRjyEpHRcq9',
             formUrl: 'https://forms.gle/RBXZEAYRjyEpHRcq9',
@@ -87,20 +87,20 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         debate: {
             id: 'debate',
-            title: 'Parliamentary Debate',
+            title: 'Debate',
             shortTitle: 'Debate',
-            badge: 'Day 1 • 9th',
+            badge: 'Day 1 • 17th',
             icon: '🎤',
             formId: 'VyaRr9pA4NL1eJ5u7',
             formUrl: 'https://forms.gle/VyaRr9pA4NL1eJ5u7',
             embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSck5V1DFIY-8aUl8au0KIDSpjMoDK3QYIxsp2i4o7HwaSnasw/viewform?embedded=true',
-            aliases: ['debate', 'parliamentary-debate']
+            aliases: ['debate']
         },
         video: {
             id: 'video',
             title: 'Video Editing Challenge',
             shortTitle: 'Video Editing',
-            badge: 'Day 2 • 10th',
+            badge: 'Day 2 • 18th',
             icon: '🎬',
             formId: '8LMSW2iawyYT8L226',
             formUrl: 'https://forms.gle/8LMSW2iawyYT8L226',
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'hunt',
             title: 'Online Campus Treasure Hunt',
             shortTitle: 'Treasure Hunt',
-            badge: 'Day 2 • 10th',
+            badge: 'Day 2 • 18th',
             icon: '🕵️',
             formId: 'CEcpoWH1DWtdVBFd9',
             formUrl: 'https://forms.gle/CEcpoWH1DWtdVBFd9',
@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         hackathon: {
             id: 'hackathon',
-            title: 'Grand Hackathon (SIH Grooming)',
+            title: 'Grand Hackathon',
             shortTitle: 'Grand Hackathon',
-            badge: 'Flagship Day 3 • 11th',
+            badge: 'Flagship Day 3 • 19th',
             icon: '💻',
             formId: 'qaL6X2f3puo45viSA',
             formUrl: 'https://forms.gle/qaL6X2f3puo45viSA',
             embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSe5JN5AlT8M5J6ZDgsvPMjw-JtlwRKq5Zrj0mKJUCo_9VUTcA/viewform?embedded=true',
-            aliases: ['hackathon', 'grand-hackathon', 'sih']
+            aliases: ['hackathon', 'grand-hackathon']
         }
     };
 
