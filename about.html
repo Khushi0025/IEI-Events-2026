@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -844,6 +844,171 @@
                 padding: 40px 20px;
             }
         }
+
+        /* ============================================================
+           GALLERY SECTION
+        ============================================================ */
+        .gallery-section {
+            background: #060606;
+            border-top: 1px solid var(--border-card);
+            padding: 90px 8%;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 14px;
+        }
+
+        /* Make certain items span more columns/rows for a masonry feel */
+        .gallery-item:nth-child(1)  { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(5)  { grid-column: span 2; }
+        .gallery-item:nth-child(9)  { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(12) { grid-column: span 2; }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-card);
+            background: rgba(18, 18, 18, 0.8);
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            text-decoration: none;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 30px rgba(245, 197, 24, 0.2), 0 12px 40px rgba(0,0,0,0.6);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        /* Google Drive thumbnail rendered inside the iframe */
+        .gallery-item iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+            display: block;
+        }
+
+        /* Overlay on hover */
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(0,0,0,0) 40%,
+                rgba(0,0,0,0.75) 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 18px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-open-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .gallery-open-label::before {
+            content: "↗";
+            font-size: 14px;
+        }
+
+        /* Gold shine bar at top on hover */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 3;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Drive thumbnail placeholder icon when iframe not loaded */
+        .gallery-thumb-bg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(245,197,24,0.06) 0%, transparent 70%);
+            gap: 10px;
+        }
+
+        .gallery-thumb-bg .photo-icon {
+            font-size: 36px;
+            opacity: 0.4;
+        }
+
+        .gallery-thumb-bg .photo-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            color: var(--gold);
+            opacity: 0.6;
+            letter-spacing: 1.5px;
+        }
+
+        .gallery-cta-wrap {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .gallery-cta-wrap p {
+            color: var(--text-muted);
+            font-size: 13.5px;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 968px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 160px;
+            }
+            .gallery-item:nth-child(1)  { grid-column: span 2; grid-row: span 2; }
+            .gallery-item:nth-child(5)  { grid-column: span 1; }
+            .gallery-item:nth-child(9)  { grid-column: span 2; grid-row: span 2; }
+            .gallery-item:nth-child(12) { grid-column: span 1; }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 140px;
+            }
+            .gallery-item:nth-child(1)  { grid-column: span 2; grid-row: span 1; }
+            .gallery-item:nth-child(9)  { grid-column: span 2; grid-row: span 1; }
+            .gallery-item:nth-child(12) { grid-column: span 1; }
+        }
     </style>
 </head>
 
@@ -864,6 +1029,7 @@
             <li><a href="events.html">Events</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="register.html">Register</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
         </ul>
 
         <div style="display: flex; align-items: center; gap: 14px;">
@@ -917,9 +1083,9 @@
             </div>
 
             <div class="stat-box">
-                <div class="stat-number">SIH</div>
-                <div class="stat-title">National Pipeline</div>
-                <div class="stat-desc">Grooming for Smart India Hackathon</div>
+                <div class="stat-number">CH</div>
+                <div class="stat-title">College Hackathon</div>
+                <div class="stat-desc">Campus-Level Engineering Challenge</div>
             </div>
 
             <div class="stat-box">
@@ -964,11 +1130,11 @@
 
             <div class="objective-card">
                 <div class="objective-icon-wrap">🇮🇳</div>
-                <h3>Smart India Hackathon (SIH) Scouting</h3>
+                <h3>College-Level Mentorship &amp; Scouting</h3>
                 <p>
-                    Identifying campus-wide standout engineering teams and providing dedicated faculty and senior mentorship to represent the institution at the prestigious Smart India Hackathon.
+                    Identifying campus-wide standout engineering teams and providing dedicated faculty and senior mentorship to build on their skills and represent the institution at college-level competitions.
                 </p>
-                <span class="objective-tag">National Gateway</span>
+                <span class="objective-tag">Campus Gateway</span>
             </div>
 
             <div class="objective-card">
@@ -1259,24 +1425,68 @@
 
 
     <!-- =========================
+         GALLERY TEASER
+    ========================== -->
+    <section id="gallery" style="padding: 80px 8%; background: rgba(10,10,10,0.6); border-top: 1px solid var(--border-card);">
+        <div class="section-header">
+            <span class="section-eyebrow">Event Moments</span>
+            <h2 class="section-heading">CAMPUS HACK <span>GALLERY</span></h2>
+            <p class="section-subtext">
+                A look back at Techdrill, a previous event organized by our society &mdash; the IEI Students' Chapter. Browse photos and video highlights from the event.
+            </p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 50px 40px; text-align: center; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
+            <div style="font-size: 48px; margin-bottom: 20px;">📸</div>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(20px, 3vw, 28px); color: #fff; margin-bottom: 14px; letter-spacing: 1px;">21 PHOTOS &nbsp;&middot;&nbsp; 2 VIDEOS</h3>
+            <p style="color: var(--text-secondary); font-size: 14.5px; max-width: 560px; margin: 0 auto 30px; line-height: 1.75;">
+                The full Techdrill gallery &mdash; including all event snapshots and highlight video clips &mdash; is available on the dedicated Gallery page.
+            </p>
+            <a href="gallery.html" class="btn btn-primary" style="font-size: 14px; padding: 14px 36px;">VIEW FULL GALLERY &rarr;</a>
+        </div>
+    
+
+    <!-- =========================
          FOOTER
     ========================== -->
     <footer>
         <div class="footer-content">
-            <a href="index.html" class="nav-brand">
-                <span class="logo-badge">IEI</span>
-                <div class="logo-text">CAMPUS <span>HACK 2026</span></div>
-            </a>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
+            <div class="footer-brand-col">
+                <a href="index.html" class="nav-brand">
+                    <span class="logo-badge">IEI</span>
+                    <div class="logo-text">CAMPUS <span>HACK 2026</span></div>
+                </a>
+                <p class="footer-brand-tagline">
+                    A premier three-day technical festival organized by the IEI Students' Chapter &mdash; Institution's Innovation Council.
+                </p>
+            </div>
+            <div class="footer-nav-col">
+                <div class="footer-nav-label">Navigation</div>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-badge-col">
+                <div class="footer-event-badge">
+                    <span class="dot"></span>
+                    Registrations Open
+                </div>
+                <div class="footer-dates">9th &middot; 10th &middot; 11th September 2026</div>
+            </div>
         </div>
         <div class="footer-bottom">
-            © 2026 <span>IEI CAMPUS HACK</span> | Institution's Innovation Council Student Chapter. All rights reserved.
+            <span>&copy; 2026 <span>IEI CAMPUS HACK</span> | Institution's Innovation Council Student Chapter. All rights reserved.</span>
+            <div class="footer-bottom-right">
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
         </div>
     </footer>
 
